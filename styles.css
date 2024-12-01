@@ -1,0 +1,437 @@
+/* Globalni stilovi */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Header */
+.zaglavlje {
+    background-image: url('images/headermaybe.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10px 20px;
+    position: sticky;
+    max-width:100%;
+    height: 180px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    top: 0;
+    left:0;
+    z-index:1000;
+}
+
+/* Tamni sloj preko slike */
+/* .zaglavlje::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+ */
+/* Header H1 */
+.zaglavlje-naslov h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: white;
+    margin: 0;
+    z-index: 1;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Header top (ikonice i pretraga) */
+.zaglavlje-gore {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width:fit-content;
+    z-index: 1;
+    gap: 20px;
+    background-color: #004d4d;
+    flex:1;
+    padding:10px;
+    border-radius:5px;
+    
+}
+
+/* Ikonice */
+.zaglavlje-gore-ikonice {
+    display: flex;
+    gap: 10px;
+}
+
+.zaglavlje-gore-ikonice a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zaglavlje-gore-ikonice a:hover img {
+    transform: scale(1.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Pretraga */
+zaglavlje .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 2;
+}
+
+.zaglavlje-gore-pretraga input[type="text"] {
+    height: 30px;
+    font-size: 14px;
+    border: none;
+    border-radius: 15px;
+    padding: 0 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.zaglavlje-gore-pretraga button {
+    height: 30px;
+    font-size: 14px;
+    padding: 0 15px;
+    background-color: white;
+    color: darkcyan;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.zaglavlje-gore-pretraga button:hover {
+    background-color: #ddd;
+}
+
+/* Navigacija */
+.zaglavlje-navigacija {
+    background-color: #004d4d;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 15px 0;
+    width: 100%;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.zaglavlje-navigacija ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.zaglavlje-navigacija ul li {
+    text-align: center;
+    position: relative;
+}
+
+.zaglavlje-navigacija ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 0;
+    display: block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+.zaglavlje-navigacija ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: darkcyan;
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+.zaglavlje-navigacija ul li a:hover::before {
+    width: 100%;
+}
+
+.zaglavlje-navigacija ul li a:hover {
+    color: white;
+}
+
+/* Glavni sadržaj (main) */
+
+.glavno
+{
+    background-image: url(images/drvece.jpg);
+    background-size: cover;
+    background-position: center;  
+    background-attachment: fixed;
+    position:relative;
+    z-index: 0;
+}
+
+.sadrzaj {
+    display: flex;
+    justify-content: space-between; /* Space between divs */
+    align-items: stretch; /* Ensures consistent height if needed */
+    max-width: 90%; /* Full width */
+    margin:1px auto;;
+    z-index: 1;   
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+.sadrzaj-levo, .sadrzaj-desno{
+
+    flex:1;
+    box-sizing: border-box;
+    padding: 10px; /* Add padding to content */
+    border: 1px solid #000; /* Optional: for visual separation */
+  
+
+}
+.sadrzaj-glavno {
+
+    flex:5;
+    box-sizing: border-box;
+    padding: 10px; /* Add padding to content */
+    border: 1px solid #000; /* Optional: for visual separation */
+
+}
+.sadrzaj-glavno h1, .sadrzaj-glavno h2 {
+    font-family: 'Lora', serif;
+    color: darkcyan;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.sadrzaj-glavno p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.sadrzaj-glavno img
+{
+    max-width: 500px;
+
+}
+
+.sadrzaj-desno
+{
+    display:flex;
+    flex-direction: column;
+    gap: 10px; /* Space between child divs */
+
+}
+
+
+.sadrzaj-desno img
+{
+        max-width: 100%;
+        height: 200px;
+        margin: 10px auto;
+}
+
+
+/* Galerija */
+.gallery-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center; /* Centriranje horizontalno */
+    align-items: center; /* Opcionalno vertikalno poravnanje */
+    text-align: center; /* Dodatna sigurnost za tekst */
+    width: 100%; /* Pobrinite se da je cela širina dostupna */
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    transition: transform 1s ease; /* Glatka tranzicija */
+}
+
+.slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Slike unutar slajdova */
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+input[type="radio"] {
+    display: none;
+
+}
+
+/* Kontrole (gumbi za odabir slajdova) */
+.controls {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+}
+
+.control-btn {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: #fff;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0);
+}
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+#slide4:checked ~ .slides {
+    transform: translateX(-300%);
+}
+#slide5:checked ~ .slides {
+    transform: translateX(-400%);
+}
+
+/* Dugmadi za prebacivanje slajdova */
+.slider-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 20;
+}
+
+.prev-slide, .next-slide {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+}
+
+/* Stil za kontrole (radio dugmadi kao dugmadi ispod slajdova) */
+.control-btn:hover {
+    opacity: 1;
+}
+.saveti
+{
+    margin: 20px 0;
+    display: flex;
+    justify-content:stretch; /* Centriranje horizontalno */
+    align-items: center; /* Opcionalno vertikalno poravnanje */
+    text-align: center; /* Dodatna sigurnost za tekst */
+    width: 100%; /* Pobrinite se da je cela širina dostupna */
+    flex-direction: column;
+}
+.savet { 
+    width: 100%;
+    border-radius: 5px;
+    height: auto;
+}
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    margin-top: 10px;
+}
+
+/* Kontakt forma */
+.contact-forma {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form */
+    text-align: center; /* Ensures all text inside is centered */
+    width: 100%; /* Make sure the form takes the full available width */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight background for contrast */
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.contact-form {
+    width: 100%;
+    /* Limit form width for larger screens */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: green;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: darkgreen;
+}
